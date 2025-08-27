@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CP1 - WebDev - CRUD</title>
+</head>
+<body>
+    <h1>Painel das Jogadoras</h1>
+
+     <form id="jogadoraForm">
+    <input type="text" id="nome" placeholder="Nome" required><br>
+    <input type="text" id="posicao" placeholder="Posição" required><br>
+    <input type="text" id="clube" placeholder="Clube" required><br>
+    <input type="number" id="gols" placeholder="Gols" required><br>
+    <input type="number" id="assistencias" placeholder="Assistências" required><br>
+    <input type="number" id="jogos" placeholder="Jogos" required><br>
+    <input type="url" id="foto" placeholder="URL da Foto"><br>
+    <button type="submit">Adicionar Jogadora</button>
+  </form>
+
+  
+  <div id="jogadoraList"></div>
+
+</body>
+<script src="./src/js/app.js"></script>
+</html>
