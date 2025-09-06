@@ -1,0 +1,63 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #222;
+}
+
+#jogadoraList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card-jogadora {
+  width: 220px;
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.card-jogadora:hover {
+  transform: scale(1.05);
+}
+
+
+.favorita {
+  color: #ffcc00;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.nao-favorita {
+  color: #ccc;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+button {
+  margin: 5px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[data-action="edit"] {
+  background-color: #007bff;
+  color: white;
+}
+
+button[data-action="delete"] {
+  background-color: #dc3545;
+  color: white;
+}
