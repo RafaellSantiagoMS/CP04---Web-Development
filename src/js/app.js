@@ -63,7 +63,7 @@ window.onload = function() {
 
 // ---------- Funções Auxiliares ----------
 function handleJogadoraListClick(event) {
-    const clickedElement = event.target.closest("button");
+    const clickedElement = event.target.closest("[data-action]");
     if (!clickedElement) return;
 
     const action = clickedElement.dataset.action;
@@ -73,6 +73,8 @@ function handleJogadoraListClick(event) {
         editJogadora(index);
     } else if (action === "delete") {
         deleteJogadora(index);
+    } else if (action === "favorita") {
+        toggleFavorita(index);
     }
 }
 
@@ -99,7 +101,7 @@ function addJogadora(event) {
     const jogos = document.getElementById('jogos').value;
     const foto = document.getElementById('foto').value;
 
-    const jogadora = { nome, posicao, clube, gols, assistencias, jogos, foto };
+    const jogadora = { nome, posicao, clube, gols, assistencias, jogos, foto, favorita: false };
 
     jogadoras.unshift(jogadora);
     saveJogadoras();
@@ -119,13 +121,17 @@ function displayJogadoras() {
         leia.classList.add('card-jogadora');
         leia.innerHTML = `
           <h3>${j.nome}</h3>
-          ${j.foto ? `<img src="${j.foto}" alt="Foto da jogadora" style="max-width:150px;">` : ""}
+          ${j.foto ? `<img src="${j.foto}" alt="Foto da jogadora">` : ""}
           <p><b>Posição:</b> ${j.posicao}</p>
           <p><b>Clube:</b> ${j.clube}</p>
           <p><b>Gols:</b> ${j.gols} | <b>Assistências:</b> ${j.assistencias} | <b>Jogos:</b> ${j.jogos}</p>
+          <span class="${j.favorita ? "favorita" : "nao-favorita"}" data-action="favorita" data-index="${index}">
+            ★
+          </span>
+          <br>
           <button data-action="edit" data-index="${index}">Editar</button>
           <button data-action="delete" data-index="${index}">Excluir</button>
-          <hr>`;
+        `;
         lista.append(leia);
     });
 }
@@ -150,4 +156,11 @@ function deleteJogadora(index) {
         displayJogadoras();
         alert("Jogadora removida com sucesso!");
     }
+}
+
+// FAVORITAR
+function toggleFavorita(index) {
+    jogadoras[index].favorita = !jogadoras[index].favorita;
+    saveJogadoras();
+    displayJogadoras();
 }
