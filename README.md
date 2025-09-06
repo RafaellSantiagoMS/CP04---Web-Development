@@ -4,6 +4,10 @@ Este projeto é uma aplicação web simples desenvolvida em **HTML, CSS e JavaSc
 
 O sistema permite **cadastrar, listar, editar, excluir e favoritar jogadoras**, utilizando o **LocalStorage** do navegador como banco de dados.
 
+**Link do GitHub Pages**
+
+- https://rafaellsantiagoms.github.io/CP04---Web-Development/
+
 ---
 
 ## Funcionalidades
