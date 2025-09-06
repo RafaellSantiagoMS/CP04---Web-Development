@@ -1,6 +1,5 @@
 // Dados iniciais
-let jogadoras = []
-[
+let jogadoras = [
   {
     "nome": "Andressa Alves",
     "posicao": "Meio-campo",
@@ -51,7 +50,7 @@ let jogadoras = []
     "jogos": 18,
     "favorita": false
   }
-]
+];
 
 // Inicialização
 window.onload = function() {
@@ -117,8 +116,8 @@ function displayJogadoras() {
 
     jogadoras.forEach((j, index) => {
         const leia = document.createElement('div');
-        el.classList.add('card-jogadora');
-        el.innerHTML = `
+        leia.classList.add('card-jogadora');
+        leia.innerHTML = `
           <h3>${j.nome}</h3>
           ${j.foto ? `<img src="${j.foto}" alt="Foto da jogadora" style="max-width:150px;">` : ""}
           <p><b>Posição:</b> ${j.posicao}</p>
